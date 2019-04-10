@@ -1,5 +1,5 @@
 var $youtubevid = $(".resvid"),
-		$notsticker = $(".not-sticker");
+    $notsticker = $(".not-sticker");
 
 function sticker() {
   var $sticker = $(".video-sticker"),
