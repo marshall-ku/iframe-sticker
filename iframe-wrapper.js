@@ -1,20 +1,26 @@
-$("iframe").each(function() {
-  var a = $(this).attr("width"),
-      b = $(this).attr("height");
+Array.from(document.querySelectorAll("iframe")).forEach(function(a) {
+  const width = a.getAttribute("width"),
+        height = a.getAttribute("height"),
+        reswrapper = document.createElement("div");
 
-  if (a / b === 16 / 9) {
-    $(this).wrap("<div class=\"resvid\"></div>")
+  if (width / height === 16 / 9) {
+    reswrapper.classList.add("resvid");
+    a.parentElement.insertBefore(reswrapper, a);
+    reswrapper.appendChild(a)
   }
-
-  if (a / b === 9 / 16) {
-    $(this).wrap("<div class=\"resvid alt\"></div>")
+  if (width / height === 9 / 16) {
+    reswrapper.classList.add("resvid", "alt");
+    a.parentElement.insertBefore(reswrapper, a);
+    reswrapper.appendChild(a)
   }
-
-  if (a / b === 4 / 3) {
-    $(this).wrap("<div class=\"resvid old\"></div>")
+  if (width / height === 4 / 3) {
+    reswrapper.classList.add("resvid", "old");
+    a.parentElement.insertBefore(reswrapper, a);
+    reswrapper.appendChild(a)
   }
-
-  if (a === b) {
-    $(this).wrap("<div class=\"resvid square\"></div>")
+  if (width === height) {
+    reswrapper.classList.add("resvid", "square");
+    a.parentElement.insertBefore(reswrapper, a);
+    reswrapper.appendChild(a)
   }
 })
