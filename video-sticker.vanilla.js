@@ -20,7 +20,7 @@ function remove(b) {
   b.parentNode.removeAttribute("class")
 }
 
-window.addEventListener('resize scroll', sticker);
+window.addEventListener("scroll", sticker);
 document.addEventListener("DOMContentLoaded", function(){
   const iframe = document.getElementsByClassName("resvid")[0].getElementsByTagName("iframe")[0],
         wrapper = document.createElement("div"),
